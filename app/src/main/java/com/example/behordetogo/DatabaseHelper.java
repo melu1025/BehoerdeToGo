@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "user.db";
@@ -13,6 +14,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COL_1 = "ID";
     private static final String COL_2 = "EMAIL";
     private static final String COL_3 = "PASSWORD";
+    private static final String COL_4 = "Vorname";
+    private static final String COL_5 = "Nachname";
+    private static final String COL_6 = "Geburtsdatum";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
@@ -20,7 +24,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, EMAIL TEXT, PASSWORD TEXT)");
+        db.execSQL("CREATE TABLE " + TABLE_NAME + " (" +
+                "ID INTEGER PRIMARY KEY AUTOINCREMENT, EMAIL TEXT, PASSWORD TEXT)");
     }
 
     @Override
@@ -29,18 +34,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertUser(String email, String password) {
+    public boolean insertUser(String email, String password,
+                              String geburtsdatum,String vorname,String nachname) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_2, email);
         contentValues.put(COL_3, password);
+        contentValues.put(COL_4, vorname);
+        contentValues.put(COL_5, nachname);
+        contentValues.put(COL_6, geburtsdatum);
+
         long result = db.insert(TABLE_NAME, null, contentValues);
         return result != -1;
     }
 
     public boolean checkUser(String email, String password) {
         SQLiteDatabase db = this.getReadableDatabase();
-        try (Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE EMAIL=? AND PASSWORD=?", new String[]{email, password})) {
+        try (Cursor cursor = db.rawQuery(
+                "SELECT * FROM " + TABLE_NAME + " WHERE EMAIL=? AND PASSWORD=?",
+                new String[]{email, password})) {
             if (cursor.getCount() > 0) {
                 return true;
             }

@@ -25,7 +25,8 @@ public class LoginActivity extends AppCompatActivity {
 
         loginButton.setOnClickListener(v -> loginUser());
 
-        registerButton.setOnClickListener(v -> startActivity(new Intent(LoginActivity.this, RegistrationActivity.class)));
+        registerButton.setOnClickListener(v -> startActivity(
+                new Intent(LoginActivity.this, RegistrationActivity.class)));
     }
 
     private void loginUser() {
@@ -33,16 +34,20 @@ public class LoginActivity extends AppCompatActivity {
         String password = passwordEditText.getText().toString().trim();
 
         if (email.isEmpty() || password.isEmpty()) {
-            Toast.makeText(LoginActivity.this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
+            Toast.makeText(LoginActivity.this,
+                    "Bitte alle Felderausfüllen", Toast.LENGTH_SHORT).show();
             return;
         }
 
         boolean isUserExists = db.checkUser(email, password);
         if (isUserExists) {
-            Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
-            // Navigate to home screen or main activity
+            Toast.makeText(LoginActivity.this,
+                    "Anmeldung erfolgreich", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(LoginActivity.this, RegistrationActivity.class));
         } else {
-            Toast.makeText(LoginActivity.this, "Login failed: Invalid email or password", Toast.LENGTH_SHORT).show();
+            Toast.makeText(LoginActivity.this,
+                    "Anmeldung fehlgeschlagen: " +
+                            "Bitte überprüfen sie ihre Anmeldedaten", Toast.LENGTH_SHORT).show();
         }
     }
 }

@@ -5,23 +5,66 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <RadioGroup
+        android:layout_width="196dp"
+        android:layout_height="77dp">
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/frau" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/mann" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/vornameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="@string/vorname" />
+
+
+    <EditText
+        android:id="@+id/nachnameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="@string/nachname" />
+
+
     <EditText
         android:id="@+id/emailEditText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:inputType="textEmailAddress"
         android:hint="@string/email" />
+
 
     <EditText
         android:id="@+id/passwordEditText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:hint="@string/password"
         android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/geburtsdatumEditText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="@string/geburtsdatum"
+        android:inputType="date" />
 
     <Button
         android:id="@+id/registerButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="sans-serif"
         android:text="@string/register" />
+
 
 </LinearLayout>
