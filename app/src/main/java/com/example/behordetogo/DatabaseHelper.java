@@ -9,9 +9,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    private static final String DATABASE_NAME = "user.db";
+    private static final String DATABASE_NAME = "app.db";
     private static final String TABLE_NAME = "user";
-    private static final String COL_1 = "ID";
     private static final String COL_2 = "EMAIL";
     private static final String COL_3 = "PASSWORD";
     private static final String COL_4 = "Vorname";

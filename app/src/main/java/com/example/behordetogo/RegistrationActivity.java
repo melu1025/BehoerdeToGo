@@ -20,6 +20,7 @@ public class RegistrationActivity extends AppCompatActivity {
         passwordEditText = findViewById(R.id.passwordEditText);
         vornameEditText = findViewById(R.id.vornameEditText);
         nachnameEditText = findViewById(R.id.nachnameEditText);
+        geburtsdatumEditText = findViewById(R.id.geburtsdatumEditText);
         Button registerButton = findViewById(R.id.registerButton);
         db = new DatabaseHelper(this);
 

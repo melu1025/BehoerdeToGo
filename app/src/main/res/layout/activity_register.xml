@@ -7,18 +7,18 @@
 
     <RadioGroup
         android:layout_width="196dp"
-        android:layout_height="77dp">
+        android:layout_height="100dp">
 
         <RadioButton
             android:id="@+id/radioButton"
             android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:text="@string/frau" />
 
         <RadioButton
             android:id="@+id/radioButton2"
             android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:text="@string/mann" />
     </RadioGroup>
 
@@ -26,6 +26,7 @@
         android:id="@+id/vornameEditText"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:inputType="text"
         android:hint="@string/vorname" />
 
 
@@ -33,6 +34,7 @@
         android:id="@+id/nachnameEditText"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:inputType="text"
         android:hint="@string/nachname" />
 
 
@@ -56,6 +58,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="@string/geburtsdatum"
+        android:autofillHints="DD-MM-YYYY"
         android:inputType="date" />
 
     <Button
