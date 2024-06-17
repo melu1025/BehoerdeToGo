@@ -9,4 +9,7 @@
     <string name="frau">Frau</string>
     <string name="mann">Mann</string>
     <string name="geburtsdatum">Geburtsdatum</string>
+    <string name="nationalitaet">Nationalität</string>
+    <string name="divers">Divers</string>
+    <string name="keineAngabe">Keine Angabe</string>
 </resources>

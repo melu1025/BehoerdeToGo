@@ -1,57 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp">
 
+
     <RadioGroup
-        android:layout_width="196dp"
-        android:layout_height="100dp">
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal">
 
         <RadioButton
             android:id="@+id/radioButton"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:text="@string/frau" />
+            android:layout_width="wrap_content"
+            android:paddingEnd="15dp"
+            android:layout_height="match_parent"
+            android:text="@string/frau"
+            tools:ignore="RtlSymmetry" />
 
         <RadioButton
             android:id="@+id/radioButton2"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:text="@string/mann" />
+            android:layout_width="wrap_content"
+            android:paddingEnd="15dp"
+            android:layout_height="match_parent"
+            android:text="@string/mann"
+            tools:ignore="RtlSymmetry" />
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingEnd="15dp"
+            android:text="@string/divers"
+            tools:ignore="RtlSymmetry" />
+        <RadioButton
+            android:id="@+id/radioButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/keineAngabe" />
+
+
     </RadioGroup>
+
+    <EditText
+        android:id="@+id/emailEditText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:autofillHints="emailAddress"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        tools:ignore="VisualLintTextFieldSize" />
+
+    <EditText
+        android:id="@+id/passwordEditText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:autofillHints="password"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        tools:ignore="VisualLintTextFieldSize" />
 
     <EditText
         android:id="@+id/vornameEditText"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:autofillHints="name"
         android:inputType="text"
-        android:hint="@string/vorname" />
+        android:hint="@string/vorname"
+        tools:ignore="VisualLintTextFieldSize" />
 
 
     <EditText
         android:id="@+id/nachnameEditText"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:autofillHints="name"
         android:inputType="text"
-        android:hint="@string/nachname" />
+        android:hint="@string/nachname"
+        tools:ignore="VisualLintTextFieldSize" />
 
-
-    <EditText
-        android:id="@+id/emailEditText"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:inputType="textEmailAddress"
-        android:hint="@string/email" />
-
-
-    <EditText
-        android:id="@+id/passwordEditText"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="@string/password"
-        android:inputType="textPassword" />
 
     <EditText
         android:id="@+id/geburtsdatumEditText"
@@ -59,7 +88,17 @@
         android:layout_height="50dp"
         android:hint="@string/geburtsdatum"
         android:autofillHints="DD-MM-YYYY"
-        android:inputType="date" />
+        android:inputType="date"
+        tools:ignore="VisualLintTextFieldSize" />
+
+    <EditText
+        android:id="@+id/nationalitaetEditText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:autofillHints=""
+        android:inputType="text"
+        android:hint="@string/nationalitaet"
+        tools:ignore="VisualLintTextFieldSize" />
 
     <Button
         android:id="@+id/registerButton"
@@ -67,7 +106,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:fontFamily="sans-serif"
-        android:text="@string/register" />
+        android:text="@string/register"
+        tools:ignore="VisualLintButtonSize" />
+
+
 
 
 </LinearLayout>

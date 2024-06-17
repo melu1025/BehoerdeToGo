@@ -26,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(v -> loginUser());
 
         registerButton.setOnClickListener(v -> startActivity(
-                new Intent(LoginActivity.this, RegistrationActivity.class)));
+                new Intent(LoginActivity.this, MainActivity.class)));
     }
 
     private void loginUser() {
