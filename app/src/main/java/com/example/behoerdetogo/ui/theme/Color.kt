@@ -1,4 +1,4 @@
-package com.example.behordetogo.ui.theme
+package com.example.behoerdetogo.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

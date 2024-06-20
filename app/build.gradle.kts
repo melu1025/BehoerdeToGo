@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.behordetogo"
+    namespace = "com.example.behoerdetogo"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.behordetogo"
+        applicationId = "com.example.behoerdetogo"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

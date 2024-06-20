@@ -1,4 +1,4 @@
-package com.example.behordetogo;
+package com.example.behoerdetogo;
 
 import android.content.ContentValues;
 import android.content.Context;

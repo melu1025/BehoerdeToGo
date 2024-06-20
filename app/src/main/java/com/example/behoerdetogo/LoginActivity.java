@@ -1,4 +1,4 @@
-package com.example.behordetogo;
+package com.example.behoerdetogo;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
@@ -26,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(v -> loginUser());
 
         registerButton.setOnClickListener(v -> startActivity(
-                new Intent(LoginActivity.this, MainActivity.class)));
+                new Intent(LoginActivity.this, RegistrationActivity.class)));
     }
 
     private void loginUser() {
@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
 
         if (email.isEmpty() || password.isEmpty()) {
             Toast.makeText(LoginActivity.this,
-                    "Bitte alle Felderausfüllen", Toast.LENGTH_SHORT).show();
+                    "Bitte alle Felder ausfüllen", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -43,11 +43,12 @@ public class LoginActivity extends AppCompatActivity {
         if (isUserExists) {
             Toast.makeText(LoginActivity.this,
                     "Anmeldung erfolgreich", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(LoginActivity.this, RegistrationActivity.class));
+            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+            finish(); // Schließt die LoginActivity, damit der Benutzer nicht zurückkommen kann
         } else {
             Toast.makeText(LoginActivity.this,
                     "Anmeldung fehlgeschlagen: " +
-                            "Bitte überprüfen sie ihre Anmeldedaten", Toast.LENGTH_SHORT).show();
+                            "Bitte überprüfen Sie Ihre Anmeldedaten", Toast.LENGTH_SHORT).show();
         }
     }
 }

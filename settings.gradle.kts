@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "BehordeToGo"
+rootProject.name = "BehoerdeToGo"
 include(":app")

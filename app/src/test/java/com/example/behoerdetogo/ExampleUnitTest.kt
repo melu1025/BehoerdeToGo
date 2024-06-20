@@ -1,4 +1,4 @@
-package com.example.behordetogo
+package com.example.behoerdetogo
 
 import org.junit.Test
 

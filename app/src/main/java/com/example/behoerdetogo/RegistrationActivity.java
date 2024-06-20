@@ -1,4 +1,4 @@
-package com.example.behordetogo;
+package com.example.behoerdetogo;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;

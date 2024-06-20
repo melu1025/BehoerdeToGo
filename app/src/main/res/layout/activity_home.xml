@@ -4,35 +4,34 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
-    <EditText
-        android:id="@+id/emailEditText"
+    <Button
+        android:id="@+id/antraegeButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="E-Mail" />
-
-    <EditText
-        android:id="@+id/passwordEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/emailEditText"
-        android:layout_marginTop="16dp"
-        android:hint="Passwort"
-        android:inputType="textPassword" />
+        android:text="Anträge" />
 
     <Button
-        android:id="@+id/loginButton"
+        android:id="@+id/kontoverwaltungButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/passwordEditText"
+        android:layout_below="@id/antraegeButton"
         android:layout_marginTop="16dp"
-        android:text="Einloggen" />
+        android:text="Kontoverwaltung" />
 
     <Button
-        android:id="@+id/registerButton"
+        android:id="@+id/terminbuchungButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/loginButton"
+        android:layout_below="@id/kontoverwaltungButton"
         android:layout_marginTop="16dp"
-        android:text="Registrieren" />
+        android:text="Terminbuchung" />
+
+    <Button
+        android:id="@+id/auskunftButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/terminbuchungButton"
+        android:layout_marginTop="16dp"
+        android:text="Auskunft" />
 
 </RelativeLayout>

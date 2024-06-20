@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BehordeToGo</string>
+    <string name="app_name">BehoerdeToGo</string>
     <string name="email">Email</string>
     <string name="password">Passwort</string>
     <string name="register">Registrieren</string>
