@@ -2,10 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp">
-
+    android:padding="16dp"
+    android:background="@color/backgroundColor">
 
     <RadioGroup
         android:layout_width="match_parent"
@@ -35,13 +35,12 @@
             android:paddingEnd="15dp"
             android:text="@string/divers"
             tools:ignore="RtlSymmetry" />
+
         <RadioButton
             android:id="@+id/radioButton4"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="@string/keineAngabe" />
-
-
     </RadioGroup>
 
     <EditText
@@ -50,8 +49,7 @@
         android:layout_height="50dp"
         android:autofillHints="emailAddress"
         android:hint="@string/email"
-        android:inputType="textEmailAddress"
-        tools:ignore="VisualLintTextFieldSize" />
+        android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/passwordEditText"
@@ -59,8 +57,7 @@
         android:layout_height="50dp"
         android:autofillHints="password"
         android:hint="@string/password"
-        android:inputType="textPassword"
-        tools:ignore="VisualLintTextFieldSize" />
+        android:inputType="textPassword" />
 
     <EditText
         android:id="@+id/vornameEditText"
@@ -68,9 +65,7 @@
         android:layout_height="50dp"
         android:autofillHints="name"
         android:inputType="text"
-        android:hint="@string/vorname"
-        tools:ignore="VisualLintTextFieldSize" />
-
+        android:hint="@string/vorname" />
 
     <EditText
         android:id="@+id/nachnameEditText"
@@ -78,9 +73,7 @@
         android:layout_height="50dp"
         android:autofillHints="name"
         android:inputType="text"
-        android:hint="@string/nachname"
-        tools:ignore="VisualLintTextFieldSize" />
-
+        android:hint="@string/nachname" />
 
     <EditText
         android:id="@+id/geburtsdatumEditText"
@@ -88,8 +81,7 @@
         android:layout_height="50dp"
         android:hint="@string/geburtsdatum"
         android:autofillHints="DD-MM-YYYY"
-        android:inputType="date"
-        tools:ignore="VisualLintTextFieldSize" />
+        android:inputType="date" />
 
     <EditText
         android:id="@+id/nationalitaetEditText"
@@ -97,19 +89,13 @@
         android:layout_height="50dp"
         android:autofillHints=""
         android:inputType="text"
-        android:hint="@string/nationalitaet"
-        tools:ignore="VisualLintTextFieldSize" />
+        android:hint="@string/nationalitaet" />
 
     <Button
         android:id="@+id/registerButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:fontFamily="sans-serif"
+        android:layout_marginTop="24dp"
         android:text="@string/register"
-        tools:ignore="VisualLintButtonSize" />
-
-
-
-
+        android:background="@color/colorPrimary" />
 </LinearLayout>

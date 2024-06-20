@@ -25,9 +25,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         antraege = new ArrayList<>();
-        antraege.add(new Antrag("Antrag 1", "Personalausweis verlängern", 2));
-        antraege.add(new Antrag("Antrag 2", "Wohnort ummelden", 1));
-        antraege.add(new Antrag("Antrag 3", "Reisepass anfordern", 3));
+        antraege.add(new Antrag("Personalausweis verlängern", "Beantragen Sie die Verlängerung Ihres Personalausweises.", 2));
+        antraege.add(new Antrag("Wohnort ummelden", "Melden Sie Ihren Wohnsitz um, wenn Sie umgezogen sind.", 1));
+        antraege.add(new Antrag("Reisepass anfordern", "Beantragen Sie einen neuen Reisepass für internationale Reisen.", 3));
+        antraege.add(new Antrag("Fahrzeug anmelden", "Melden Sie ein neu erworbenes Fahrzeug an.", 2));
+        antraege.add(new Antrag("Kindergeld beantragen", "Beantragen Sie staatliches Kindergeld.", 1));
+        antraege.add(new Antrag("Gewerbe anmelden", "Melden Sie ein neues Gewerbe an.", 3));
+        antraege.add(new Antrag("Steuererklärung einreichen", "Reichen Sie Ihre jährliche Steuererklärung ein.", 2));
+        antraege.add(new Antrag("Bauplan genehmigen lassen", "Beantragen Sie die Genehmigung für einen Bauplan.", 1));
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

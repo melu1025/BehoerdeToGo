@@ -1,37 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
+    tools:context=".HomeActivity">
 
-    <Button
+    <!-- Welcome Text -->
+    <TextView
+        android:id="@+id/welcomeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Willkommen bei BehördeToGo!"
+        android:textSize="24sp"
+        android:textColor="?attr/colorPrimary"
+    android:layout_gravity="center"
+    android:paddingBottom="24dp" />
+
+    <!-- Button to view applications -->
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/antraegeButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Anträge" />
+        android:text="Anträge anzeigen"
+        android:backgroundTint="?attr/colorPrimary"
+    android:textColor="@android:color/white"
+    android:layout_marginTop="16dp" />
 
-    <Button
+    <!-- Weitere Buttons für die Navigation -->
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/kontoverwaltungButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/antraegeButton"
-        android:layout_marginTop="16dp"
-        android:text="Kontoverwaltung" />
+        android:text="Kontoverwaltung"
+        android:backgroundTint="?attr/colorPrimary"
+    android:textColor="@android:color/white"
+    android:layout_marginTop="16dp" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/terminbuchungButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/kontoverwaltungButton"
-        android:layout_marginTop="16dp"
-        android:text="Terminbuchung" />
+        android:text="Termin buchen"
+        android:backgroundTint="?attr/colorPrimary"
+    android:textColor="@android:color/white"
+    android:layout_marginTop="16dp" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/auskunftButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/terminbuchungButton"
-        android:layout_marginTop="16dp"
-        android:text="Auskunft" />
+        android:text="Auskunft"
+        android:backgroundTint="?attr/colorPrimary"
+    android:textColor="@android:color/white"
+    android:layout_marginTop="16dp" />
 
-</RelativeLayout>
+</LinearLayout>

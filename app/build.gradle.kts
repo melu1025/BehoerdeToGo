@@ -71,4 +71,5 @@ dependencies {
 
     // RecyclerView Compose mit benutzerdefinierter Syntax
     implementation(libs.androidx.recyclerview.compose)
+    implementation("com.google.android.material:material:1.12.0") // Beispiel für Material Components
 }

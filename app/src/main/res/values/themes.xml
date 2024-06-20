@@ -1,5 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <style name="Theme.BehoerdeToGo" parent="android:Theme.Material.Light.NoActionBar" />
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme -->
+    <style name="Theme.BehoerdeToGo" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!-- Dark variant of the primary color -->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!-- Accent color -->
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- Other theme attributes -->
+    </style>
 </resources>

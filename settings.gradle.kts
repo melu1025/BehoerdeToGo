@@ -14,8 +14,9 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
-        google()
+        google() // Wiederholte Definition für Abhängigkeitsauflösung
         mavenCentral()
+        // Weitere Repositories nach Bedarf hinzufügen
     }
 }
 
