@@ -40,6 +40,12 @@
             android:name=".RegistrationActivity"
             android:theme="@style/Theme.BehoerdeToGo" />
 
+        <activity
+            android:name=".AntragDetailActivity"
+            android:exported="true"
+            android:theme="@style/Theme.BehoerdeToGo" />
+
+
     </application>
 
 </manifest>

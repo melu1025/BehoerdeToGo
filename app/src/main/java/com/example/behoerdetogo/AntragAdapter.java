@@ -1,5 +1,6 @@
 package com.example.behoerdetogo;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,7 +8,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 
 import java.util.List;
 
@@ -29,8 +29,18 @@ public class AntragAdapter extends RecyclerView.Adapter<AntragAdapter.AntragView
     public void onBindViewHolder(@NonNull AntragViewHolder holder, int position) {
         Antrag aktuellerAntrag = antraege.get(position);
         holder.titelTextView.setText(aktuellerAntrag.getTitel());
-        holder.beschreibungTextView.setText(aktuellerAntrag.getBeschreibung());
         holder.prioritaetTextView.setText(String.valueOf(aktuellerAntrag.getPrioritaet()));
+
+        // Set a click listener to open the detail view
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), AntragDetailActivity.class);
+                intent.putExtra("titel", aktuellerAntrag.getTitel());
+                intent.putExtra("beschreibung", aktuellerAntrag.getBeschreibung());
+                v.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -40,13 +50,11 @@ public class AntragAdapter extends RecyclerView.Adapter<AntragAdapter.AntragView
 
     public static class AntragViewHolder extends RecyclerView.ViewHolder {
         public TextView titelTextView;
-        public TextView beschreibungTextView;
         public TextView prioritaetTextView;
 
         public AntragViewHolder(@NonNull View itemView) {
             super(itemView);
             titelTextView = itemView.findViewById(R.id.titelTextView);
-            beschreibungTextView = itemView.findViewById(R.id.beschreibungTextView);
             prioritaetTextView = itemView.findViewById(R.id.prioritaetTextView);
         }
     }
