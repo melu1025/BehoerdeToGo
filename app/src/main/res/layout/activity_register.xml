@@ -8,23 +8,24 @@
     android:background="@color/backgroundColor">
 
     <RadioGroup
+        android:id="@+id/radioGeschlechter"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <RadioButton
             android:id="@+id/radioButton"
             android:layout_width="wrap_content"
-            android:paddingEnd="15dp"
             android:layout_height="match_parent"
+            android:paddingEnd="15dp"
             android:text="@string/frau"
             tools:ignore="RtlSymmetry" />
 
         <RadioButton
             android:id="@+id/radioButton2"
             android:layout_width="wrap_content"
-            android:paddingEnd="15dp"
             android:layout_height="match_parent"
+            android:paddingEnd="15dp"
             android:text="@string/mann"
             tools:ignore="RtlSymmetry" />
 
