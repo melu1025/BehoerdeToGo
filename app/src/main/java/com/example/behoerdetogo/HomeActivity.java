@@ -2,7 +2,6 @@ package com.example.behoerdetogo;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,33 +23,21 @@ public class HomeActivity extends AppCompatActivity {
         terminbuchungButton = findViewById(R.id.terminbuchungButton);
         auskunftButton = findViewById(R.id.auskunftButton);
 
-        antraegeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
+        antraegeButton.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, MainActivity.class);
+            startActivity(intent);
         });
 
-        kontoverwaltungButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Intent für Kontoverwaltung starten
-            }
+        kontoverwaltungButton.setOnClickListener(v -> {
+            // Intent für Kontoverwaltung starten
         });
 
-        terminbuchungButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Intent für Terminbuchung starten
-            }
+        terminbuchungButton.setOnClickListener(v -> {
+            // Intent für Terminbuchung starten
         });
 
-        auskunftButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Intent für Auskunft starten
-            }
+        auskunftButton.setOnClickListener(v -> {
+            // Intent für Auskunft starten
         });
     }
 }

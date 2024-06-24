@@ -44,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(LoginActivity.this,
                     "Anmeldung erfolgreich", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(LoginActivity.this, HomeActivity.class));
-            finish(); // Schließt die LoginActivity, damit der Benutzer nicht zurückkommen kann
+            finish();
         } else {
             Toast.makeText(LoginActivity.this,
                     "Anmeldung fehlgeschlagen: " +

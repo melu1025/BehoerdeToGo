@@ -1,9 +1,9 @@
 package com.example.behoerdetogo;
 
 public class Antrag {
-    private String titel;
-    private String beschreibung;
-    private int prioritaet;
+    private final String titel;
+    private final String beschreibung;
+    private final int prioritaet;
 
     public Antrag(String titel, String beschreibung, int prioritaet) {
         this.titel = titel;
@@ -15,23 +15,12 @@ public class Antrag {
         return titel;
     }
 
-    public void setTitel(String titel) {
-        this.titel = titel;
-    }
-
     public String getBeschreibung() {
         return beschreibung;
-    }
-
-    public void setBeschreibung(String beschreibung) {
-        this.beschreibung = beschreibung;
     }
 
     public int getPrioritaet() {
         return prioritaet;
     }
 
-    public void setPrioritaet(int prioritaet) {
-        this.prioritaet = prioritaet;
-    }
 }

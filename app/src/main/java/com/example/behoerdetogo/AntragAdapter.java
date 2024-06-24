@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class AntragAdapter extends RecyclerView.Adapter<AntragAdapter.AntragViewHolder> {
-    private List<Antrag> antraege;
+    private final List<Antrag> antraege;
 
     public AntragAdapter(List<Antrag> antraege) {
         this.antraege = antraege;
@@ -31,15 +31,11 @@ public class AntragAdapter extends RecyclerView.Adapter<AntragAdapter.AntragView
         holder.titelTextView.setText(aktuellerAntrag.getTitel());
         holder.prioritaetTextView.setText(String.valueOf(aktuellerAntrag.getPrioritaet()));
 
-        // Set a click listener to open the detail view
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), AntragDetailActivity.class);
-                intent.putExtra("titel", aktuellerAntrag.getTitel());
-                intent.putExtra("beschreibung", aktuellerAntrag.getBeschreibung());
-                v.getContext().startActivity(intent);
-            }
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(v.getContext(), AntragDetailActivity.class);
+            intent.putExtra("titel", aktuellerAntrag.getTitel());
+            intent.putExtra("beschreibung", aktuellerAntrag.getBeschreibung());
+            v.getContext().startActivity(intent);
         });
     }
 

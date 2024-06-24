@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle item selection
         if (item.getItemId() == R.id.sortByTitle) {
             sortAntraegeByTitle();
             return true;
@@ -56,27 +55,16 @@ public class MainActivity extends AppCompatActivity {
             sortAntraegeByPrioritaet();
             return true;
         }
-        // Handle other menu items if any
         return super.onOptionsItemSelected(item);
     }
 
     private void sortAntraegeByTitle() {
-        Collections.sort(antraege, new Comparator<Antrag>() {
-            @Override
-            public int compare(Antrag a1, Antrag a2) {
-                return a1.getTitel().compareTo(a2.getTitel());
-            }
-        });
+        antraege.sort(Comparator.comparing(Antrag::getTitel));
         adapter.notifyDataSetChanged();
     }
 
     private void sortAntraegeByPrioritaet() {
-        Collections.sort(antraege, new Comparator<Antrag>() {
-            @Override
-            public int compare(Antrag a1, Antrag a2) {
-                return Integer.compare(a1.getPrioritaet(), a2.getPrioritaet());
-            }
-        });
+        antraege.sort(Comparator.comparingInt(Antrag::getPrioritaet));
         adapter.notifyDataSetChanged();
     }
 }

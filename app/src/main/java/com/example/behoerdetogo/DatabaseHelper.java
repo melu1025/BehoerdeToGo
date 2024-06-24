@@ -6,7 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "behoerde.db";
@@ -18,13 +17,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COL_6 = "Geburtsdatum";
     private static final String COL_7 = "Nationalitaet";
     private static final String COL_8 = "Geschlecht";
+
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + TABLE_NAME + " (" + "ID INTEGER PRIMARY KEY AUTOINCREMENT, EMAIL TEXT, PASSWORD TEXT , VORNAME TEXT , NACHNAME TEXT , GEBURTSDATUM TEXT , NATIONALITAET TEXT , GESCHLECHT TEXT)");
+        db.execSQL("CREATE TABLE " + TABLE_NAME + " (" +
+                "ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "EMAIL TEXT, " +
+                "PASSWORD TEXT, " +
+                "VORNAME TEXT, " +
+                "NACHNAME TEXT, " +
+                "GEBURTSDATUM TEXT, " +
+                "NATIONALITAET TEXT, " +
+                "GESCHLECHT TEXT)");
     }
 
     @Override
@@ -34,11 +42,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public boolean insertUser(String email, String password,
-                              String geburtsdatum,String vorname,String nachname, String nationalitaet, String geschlecht) {
+                              String geburtsdatum, String vorname, String nachname, String nationalitaet, String geschlecht) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_2, email);
-        contentValues.put(COL_3, password);
+        contentValues.put(COL_3, PasswordUtil.hashPassword(password));
         contentValues.put(COL_4, vorname);
         contentValues.put(COL_5, nachname);
         contentValues.put(COL_6, geburtsdatum);
@@ -52,12 +60,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public boolean checkUser(String email, String password) {
         SQLiteDatabase db = this.getReadableDatabase();
         try (Cursor cursor = db.rawQuery(
-                "SELECT * FROM " + TABLE_NAME + " WHERE EMAIL=? AND PASSWORD=?",
-                new String[]{email, password})) {
-            if (cursor.getCount() > 0) {
-                return true;
+                "SELECT * FROM " + TABLE_NAME + " WHERE EMAIL=?",
+                new String[]{email})) {
+            if (cursor.moveToFirst()) {
+                String storedHash = cursor.getString(cursor.getColumnIndexOrThrow(COL_3));
+                return PasswordUtil.verifyPassword(storedHash, password);
             }
         }
         return false;
     }
 }
+
