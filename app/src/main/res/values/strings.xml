@@ -13,4 +13,5 @@
     <string name="nationalitaet">Nationalität</string>
     <string name="divers">Divers</string>
     <string name="keineAngabe">Keine Angabe</string>
+    <string name="confirmPassword">Passwort bestaetigen</string>
 </resources>

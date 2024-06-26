@@ -61,6 +61,15 @@
         android:inputType="textPassword" />
 
     <EditText
+        android:id="@+id/confirmPasswordEditText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:autofillHints="password"
+        android:hint="@string/confirmPassword"
+        android:inputType="textPassword"
+        />
+
+    <EditText
         android:id="@+id/vornameEditText"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -76,13 +85,17 @@
         android:inputType="text"
         android:hint="@string/nachname" />
 
-    <EditText
-        android:id="@+id/geburtsdatumEditText"
+    <Button
+        android:id="@+id/datePickerButton"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="30sp"
+        android:textColor="@color/black"
+        style="?android:spinnerStyle"
         android:hint="@string/geburtsdatum"
-        android:autofillHints="DD-MM-YYYY"
-        android:inputType="date" />
+        android:onClick="openDatePicker"/>
+
 
     <EditText
         android:id="@+id/nationalitaetEditText"
