@@ -69,7 +69,7 @@ public class RegistrationActivity extends AppCompatActivity {
             Toast.makeText(RegistrationActivity.this, "Bitte geben sie ihr Geburtsdatum ein", Toast.LENGTH_SHORT).show();
             return;
         }
-        boolean isInserted = db.insertUser(email, password, vorname, nachname, geburtsdatum, nationalitaet, geschlecht);
+        boolean isInserted = db.insertUser(email, password, geburtsdatum, vorname, nachname, nationalitaet, geschlecht);
         if (isInserted) {
             Toast.makeText(RegistrationActivity.this, "Registrierung Erfolgreich", Toast.LENGTH_SHORT).show();
             finish();
