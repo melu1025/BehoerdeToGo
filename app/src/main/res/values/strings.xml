@@ -14,4 +14,5 @@
     <string name="divers">Divers</string>
     <string name="keineAngabe">Keine Angabe</string>
     <string name="confirmPassword">Passwort bestaetigen</string>
+    <string name="vergessen">Passwort vergessen?</string>
 </resources>

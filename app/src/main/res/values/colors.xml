@@ -1,10 +1,11 @@
 <resources>
-    <color name="colorPrimary">#1976D2</color>   <!-- Blau -->
-    <color name="colorPrimaryDark">#1565C0</color>   <!-- Dunkleres Blau -->
-    <color name="colorAccent">#FFC107</color>   <!-- Amber -->
+    <color name="colorPrimary">#1976D2</color>   
+    <color name="colorPrimaryDark">#1565C0</color>
+    <color name="colorAccent">#FFC107</color>
 
-    <color name="backgroundColor">#FFFFFF</color>   <!-- Weiß -->
-    <color name="textColor">#212121</color>   <!-- Dunkles Grau für Texte -->
+    <color name="backgroundColor">#FFFFFF</color>
+    <color name="textColor">#212121</color>
     <color name="black">#000000</color>
-    <color name="colorSecondary">#4CAF50</color>   <!-- Grün -->
+    <color name="colorPurple">#51414F</color>
+    <color name="colorSecondary">#4CAF50</color>
 </resources>
