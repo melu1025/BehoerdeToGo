@@ -20,7 +20,7 @@
             android:theme="@style/Theme.BehoerdeToGo" />
 
         <activity
-            android:name=".MainActivity"
+            android:name=".AntraegeActivity"
             android:exported="true"
             android:theme="@style/Theme.BehoerdeToGo">
             <!-- Intent filter not needed if MainActivity is not the launcher activity -->

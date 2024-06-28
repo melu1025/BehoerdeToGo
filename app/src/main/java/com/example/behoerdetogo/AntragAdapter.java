@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+/** Adapter Klasse für den Recycle Viewer */
 public class AntragAdapter extends RecyclerView.Adapter<AntragAdapter.AntragViewHolder> {
     private final List<Antrag> antraege;
 
@@ -18,6 +19,8 @@ public class AntragAdapter extends RecyclerView.Adapter<AntragAdapter.AntragView
         this.antraege = antraege;
     }
 
+    /** on Create Methode für das Anzeigen der einzelnen Antraege
+     * erstellt so viele die auf den Activity Screen passen*/
     @NonNull
     @Override
     public AntragViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -25,6 +28,8 @@ public class AntragAdapter extends RecyclerView.Adapter<AntragAdapter.AntragView
         return new AntragViewHolder(view);
     }
 
+    /** Funktion die den XML- Elementen Daten zuweißt und
+     * On Click Listener für die einzelnen itemViews anlegt*/
     @Override
     public void onBindViewHolder(@NonNull AntragViewHolder holder, int position) {
         Antrag aktuellerAntrag = antraege.get(position);
@@ -39,6 +44,7 @@ public class AntragAdapter extends RecyclerView.Adapter<AntragAdapter.AntragView
         });
     }
 
+    /** gibt Anzahl an Anträgen zurück */
     @Override
     public int getItemCount() {
         return antraege.size();

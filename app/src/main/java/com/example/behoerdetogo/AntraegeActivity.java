@@ -15,10 +15,13 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+/** Activity für das anzeigen der Antraege */
+public class AntraegeActivity extends AppCompatActivity {
     private List<Antrag> antraege;
     private AntragAdapter adapter;
 
+    /** on Create Methode für die RegistrierungsActivity
+     * Variablen werden Elementen in der XML Datei zugewiesesn */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,12 +43,14 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
 
+    /** on Create Methode für das Menu zur Sortierung */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
 
+    /** Funktion für die Auswahl der Sortierung*/
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.sortByTitle) {
@@ -58,12 +63,14 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /** Sortierung nach dem Titel*/
     @SuppressLint("NotifyDataSetChanged")
     private void sortAntraegeByTitle() {
         antraege.sort(Comparator.comparing(Antrag::getTitel));
         adapter.notifyDataSetChanged();
     }
 
+    /** Sortierung nach der Priorität*/
     @SuppressLint("NotifyDataSetChanged")
     private void sortAntraegeByPrioritaet() {
         antraege.sort(Comparator.comparingInt(Antrag::getPrioritaet));

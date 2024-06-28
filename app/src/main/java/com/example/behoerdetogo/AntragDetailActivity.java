@@ -1,13 +1,12 @@
 package com.example.behoerdetogo;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/** Klasse für die AntragsDetailActivity */
 public class AntragDetailActivity extends AppCompatActivity {
 
     @Override
@@ -17,7 +16,6 @@ public class AntragDetailActivity extends AppCompatActivity {
 
         TextView titelTextView = findViewById(R.id.titelTextView);
         TextView beschreibungTextView = findViewById(R.id.beschreibungTextView);
-        Button downloadPdfButton = findViewById(R.id.downloadPdfButton);
 
         Intent intent = getIntent();
         String titel = intent.getStringExtra("titel");
@@ -26,12 +24,5 @@ public class AntragDetailActivity extends AppCompatActivity {
         titelTextView.setText(titel);
         beschreibungTextView.setText(beschreibung);
 
-        downloadPdfButton.setOnClickListener(v -> {
-            Uri uri = Uri.parse("file:///android_asset/Personalausweis_Antrag.pdf");
-            Intent pdfIntent = new Intent(Intent.ACTION_VIEW);
-            pdfIntent.setDataAndType(uri, "application/pdf");
-            pdfIntent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-            startActivity(pdfIntent);
-        });
     }
 }

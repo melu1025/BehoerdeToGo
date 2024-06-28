@@ -1,5 +1,6 @@
 package com.example.behoerdetogo;
 
+/** Antrags Entity Klasse*/
 public class Antrag {
     private final String titel;
     private final String beschreibung;
