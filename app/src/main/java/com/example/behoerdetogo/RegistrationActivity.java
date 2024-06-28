@@ -19,7 +19,7 @@ import java.util.Calendar;
 public class RegistrationActivity extends AppCompatActivity {
 
     private EditText emailEditText, passwordEditText, confirmPasswordEditText, vornameEditText, nachnameEditText, nationalitaetEditText;
-    private DatabaseHelper db;
+    private Repository db;
     private RadioGroup radioGeschlechter;
     private DatePickerDialog datePickerDialog;
     private Button dateButton;
@@ -45,7 +45,7 @@ public class RegistrationActivity extends AppCompatActivity {
         nationalitaetEditText = findViewById(R.id.nationalitaetEditText);
         radioGeschlechter = findViewById(R.id.radioGeschlechter);
         Button registerButton = findViewById(R.id.registerButton);
-        db = new DatabaseHelper(this);
+        db = new Repository(this);
 
         registerButton.setOnClickListener(v -> registerUser());
     }

@@ -11,7 +11,7 @@ import android.widget.Toast;
 public class LoginActivity extends AppCompatActivity {
 
     private EditText emailEditText, passwordEditText;
-    private DatabaseHelper db;
+    private Repository db;
 
     /** on create Methode für die Login Klasse
      * Variablen werden Elementen in der XML Datei zugewiesesn
@@ -25,7 +25,7 @@ public class LoginActivity extends AppCompatActivity {
         passwordEditText = findViewById(R.id.passwordEditText);
         Button loginButton = findViewById(R.id.loginButton);
         Button registerButton = findViewById(R.id.registerButton);
-        db = new DatabaseHelper(this);
+        db = new Repository(this);
 
         loginButton.setOnClickListener(v -> loginUser());
 
