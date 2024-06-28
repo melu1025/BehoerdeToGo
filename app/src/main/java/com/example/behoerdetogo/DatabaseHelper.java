@@ -41,6 +41,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    /** Methode zum schreiben eines Nutzers in die DB*/
     public boolean insertUser(String email, String password,
                               String geburtsdatum, String vorname, String nachname, String nationalitaet, String geschlecht) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -57,6 +58,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return result != -1;
     }
 
+    /** Funktion die überprüft ob Email und passwort Kombination in DB vorhanden ist*/
     public boolean checkUser(String email, String password) {
         SQLiteDatabase db = this.getReadableDatabase();
         try (Cursor cursor = db.rawQuery(

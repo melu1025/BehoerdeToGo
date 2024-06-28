@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 
+/** Klasse für die RegistrierungsActivity */
 public class RegistrationActivity extends AppCompatActivity {
 
     private EditText emailEditText, passwordEditText, confirmPasswordEditText, vornameEditText, nachnameEditText, nationalitaetEditText;
@@ -24,7 +25,9 @@ public class RegistrationActivity extends AppCompatActivity {
     private Button dateButton;
 
 
-
+    /** on Create Methode für die RegistrierungsActivity
+     * Variablen werden Elementen in der XML Datei zugewiesesn
+     * und onClickListener werden gesestz*/
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,8 @@ public class RegistrationActivity extends AppCompatActivity {
         registerButton.setOnClickListener(v -> registerUser());
     }
 
+    /** Funktion die aufgerufen wird wenn ein User registriert werden soll.
+     * Holt sich die Daten aus den XML-Elementen und validiert diese*/
     private void registerUser() {
         int checkId = radioGeschlechter.getCheckedRadioButtonId();
         String email = emailEditText.getText().toString().trim();
@@ -84,6 +89,7 @@ public class RegistrationActivity extends AppCompatActivity {
         }
     }
 
+    /** Initialisiert Date Picker mit dem aktuellen Datum*/
     private void initDatePicker()
     {
         DatePickerDialog.OnDateSetListener dateSetListener = (datePicker, year, month, day) -> {
@@ -100,17 +106,20 @@ public class RegistrationActivity extends AppCompatActivity {
         datePickerDialog = new DatePickerDialog(this, dateSetListener, year, month, day);
 
     }
+    /** Funktion um Date in einen String umzuwandeln */
     private String makeDateString(int day, int month, int year)
     {
         return day + "." + month + "." + year;
     }
+    /** Funktion die DatePickerDialog öffnet */
     public void openDatePicker(View view)
     {
         datePickerDialog.show();
     }
-    // Passwortvalidierungsfunktion
+    /** Funktion zur Validierung des Passworts mit einer REGEX:
+     * mindestens 8 Zeichen mit mindestens einr Zahl, einem Sonderzeichen,
+     * einem Großbuchstaben und einem Kleinbuchstaben*/
     private boolean isValidPassword(String password) {
-        // Mindestens 8 Zeichen, ein Großbuchstabe, ein Kleinbuchstabe, eine Zahl und ein Sonderzeichen
         String passwordPattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@#$%^&+=!]).{8,}$";
         return password.matches(passwordPattern);
     }

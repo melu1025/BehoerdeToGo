@@ -7,11 +7,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+/** Klasse für die LoginActivity */
 public class LoginActivity extends AppCompatActivity {
 
     private EditText emailEditText, passwordEditText;
     private DatabaseHelper db;
 
+    /** on create Methode für die Login Klasse
+     * Variablen werden Elementen in der XML Datei zugewiesesn
+     * und onClickListener werden gesestz */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +33,8 @@ public class LoginActivity extends AppCompatActivity {
                 new Intent(LoginActivity.this, RegistrationActivity.class)));
     }
 
+    /** Methode die Beim Clicken des Login Buttons aufgerufen wird
+     * Überprüft ob Email und Passwort Kombination in der DB vorhanden ist */
     private void loginUser() {
         String email = emailEditText.getText().toString().trim();
         String password = passwordEditText.getText().toString().trim();
