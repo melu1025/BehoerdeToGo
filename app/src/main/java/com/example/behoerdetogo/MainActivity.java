@@ -1,6 +1,7 @@
 package com.example.behoerdetogo;
 
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -58,11 +58,13 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private void sortAntraegeByTitle() {
         antraege.sort(Comparator.comparing(Antrag::getTitel));
         adapter.notifyDataSetChanged();
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private void sortAntraegeByPrioritaet() {
         antraege.sort(Comparator.comparingInt(Antrag::getPrioritaet));
         adapter.notifyDataSetChanged();

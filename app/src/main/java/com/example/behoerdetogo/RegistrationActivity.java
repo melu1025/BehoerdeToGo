@@ -3,6 +3,7 @@ package com.example.behoerdetogo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.View;
@@ -24,6 +25,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
 
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,8 +59,12 @@ public class RegistrationActivity extends AppCompatActivity {
         RadioButton rb = findViewById(checkId);
         String geschlecht = rb.getText().toString();
 
-        if (email.isEmpty() || password.isEmpty()) {
-            Toast.makeText(RegistrationActivity.this, "Bitte geben sie ihre Benutzerdaten ein", Toast.LENGTH_SHORT).show();
+        if (email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty() || vorname.isEmpty() || nachname.isEmpty() || nationalitaet.isEmpty()) {
+            Toast.makeText(RegistrationActivity.this, "Bitte füllen Sie alle Felder aus", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (!isValidPassword(password)) {
+            Toast.makeText(RegistrationActivity.this, "Das Passwort muss mindestens 8 Zeichen lang sein, einen Großbuchstaben, einen Kleinbuchstaben, eine Zahl und ein Sonderzeichen enthalten", Toast.LENGTH_LONG).show();
             return;
         }
         if (!password.equals(confirmPassword)) {
@@ -101,5 +107,11 @@ public class RegistrationActivity extends AppCompatActivity {
     public void openDatePicker(View view)
     {
         datePickerDialog.show();
+    }
+    // Passwortvalidierungsfunktion
+    private boolean isValidPassword(String password) {
+        // Mindestens 8 Zeichen, ein Großbuchstabe, ein Kleinbuchstabe, eine Zahl und ein Sonderzeichen
+        String passwordPattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@#$%^&+=!]).{8,}$";
+        return password.matches(passwordPattern);
     }
 }

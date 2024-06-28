@@ -64,16 +64,11 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-    // Room Database
-    implementation(libs.androidx.room.runtime) // Für die Laufzeitkomponenten von Room
-    annotationProcessor(libs.androidx.room.compiler) // Für die Annotationen und Kompilierung
-    implementation(libs.androidx.room.ktx) // Für Kotlin-Extensions (optional aber empfohlen)
-
+    implementation(libs.androidx.room.runtime)
+    annotationProcessor(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
     implementation("at.favre.lib:bcrypt:0.7.0")
     implementation("net.java.dev.jna:jna:5.8.0")
-
-
-    // RecyclerView Compose mit benutzerdefinierter Syntax
     implementation(libs.androidx.recyclerview.compose)
-    implementation("com.google.android.material:material:1.12.0") // Beispiel für Material Components
+    implementation("com.google.android.material:material:1.12.0")
 }

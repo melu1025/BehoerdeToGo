@@ -8,20 +8,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private Button antraegeButton;
-    private Button kontoverwaltungButton;
-    private Button terminbuchungButton;
-    private Button auskunftButton;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        antraegeButton = findViewById(R.id.antraegeButton);
-        kontoverwaltungButton = findViewById(R.id.kontoverwaltungButton);
-        terminbuchungButton = findViewById(R.id.terminbuchungButton);
-        auskunftButton = findViewById(R.id.auskunftButton);
+        Button antraegeButton = findViewById(R.id.antraegeButton);
+        Button kontoverwaltungButton = findViewById(R.id.kontoverwaltungButton);
+        Button terminbuchungButton = findViewById(R.id.terminbuchungButton);
+        Button auskunftButton = findViewById(R.id.auskunftButton);
 
         antraegeButton.setOnClickListener(v -> {
             Intent intent = new Intent(HomeActivity.this, MainActivity.class);
